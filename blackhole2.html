@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Concepts</title>
+    <style>
+        /* Black & White Dark Theme */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px;
+            background: #111;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 15px;
+            background: #222;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .container {
+            margin: 30px auto;
+            width: 90%;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .card {
+            width: 140px;
+            height: 130px;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 15px;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .card:hover {
+            background: #333;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #222;
+            color: white;
+            margin:0% auto;
+            padding:30px;
+            width: 45%;
+			border-radius: 2px;
+            text-align: left;
+			box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .modal-content img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .close:hover {
+            color: red;
+        }
+
+        .info-section {
+            margin-top: 50px;
+            padding: 20px;
+            background: #111;
+            text-align: left;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .info-section img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        
+        
+        footer {
+            padding: 20px;
+            background: #222;
+            margin-top: 30px;
+        }
+		h1 a{
+		text-decoration:none;
+		color:inherit;
+		}
+		
+</style>
+</head>
+<body>
+
+    <header>
+        <h1><a href="home ham2.html">VoidSeek</a></h1>
+        <p>Exploring the Advanced Concepts</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#darkmatter">Black holes</a></li>
+            <li><a href="#aliens">Supermassive Black holes</a></li>
+            <li><a href="#exploration">White holes</a></li>
+			<li><a href="#exploration">Neutron stars</a></li>
+			<li><a href="#exploration">Supernova</a></li>
+			<li><a href="#exploration">Dark Matter and Dark Energy</a></li>
+			</ul>
+    </nav>
+
+    <section class="container">
+        <h2>Advanced Astronomical Concepts</h2>
+        <div class="cards">
+            <div class="card" onclick="openModal('Black holes')">Black holes</div>
+            <div class="card" onclick="openModal('Supermassive Black holes')">Supermassive Black holes</div>
+            <div class="card" onclick="openModal('White holes')">White holes</div>
+			<div class="card" onclick="openModal('Neutron stars')">Neutron stars</div>
+			<div class="card" onclick="openModal('Supernova')">Supernova</div>
+			<div class="card" onclick="openModal('Dark Matter and Dark Energy')">Dark Matter and Dark Energy</div>
+			
+        </div>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Astronomy Image">
+            <h3 id="modal-title"></h3>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <section class="info-section">
+        <h2>Advanced Astronomical Concepts</h2>
+        
+        <h3>Black holes</h3>
+        <p>black hole, cosmic body of extremely intense gravity from which nothing, not even light, can escape. A black hole can be formed by the death of a massive star. When such a star has exhausted the internal thermonuclear fuels in its core at the end of its life, the core becomes unstable and gravitationally collapses inward upon itself, and the star’s outer layers are blown away. The crushing weight of constituent matter falling in from all sides compresses the dying star to a point of zero volume and infinite density called the singularity.</p>
+         
+        <h3>Supermassive black holes</h3>
+        <p>supermassive black hole (SMBH), a black hole more than one hundred thousand times the mass of the Sun. Nearly every large galaxy has a supermassive black hole at its centre. Active galactic nuclei, such as Seyfert galaxies and quasars, are powered by supermassive black holes. The largest supermassive black hole is in the galaxy cluster Abell 1201 and has a mass thirty billion times that of the Sun. Sagittarius A*, the supermassive black hole at the centre of the Milky Way Galaxy, has a mass four million times that of the Sun.</p>
+         
+        <h3>White holes</h3>
+        <p>White holes are hypothetical cosmic objects that are essentially the reverse of black holes. While black holes pull in matter and light due to their immense gravitational force, white holes are theorized to expel matter and energy, and nothing can enter them from the outside. They emerge from the same equations in Einstein’s theory of general relativity that predict black holes, suggesting that white holes could be time-reversed versions of black holes. However, unlike black holes, there is no observational evidence that white holes actually exist, and their existence raises theoretical challenges, such as violations of the second law of thermodynamics. Some scientists have proposed that white holes might be connected to black holes via wormholes, forming what’s known as an Einstein-Rosen bridge. Despite being a fascinating concept in theoretical physics, white holes remain purely speculative.</p>
+	    
+		<h3>Worm holes</h3>
+		<p>Wormholes are theoretical passages through space-time that could create shortcuts between distant regions of the universe. Predicted by solutions to Einstein's general theory of relativity, a wormhole—also known as an Einstein-Rosen bridge—is envisioned as a tunnel with two ends, each at separate points in space and time. In theory, wormholes could allow for faster-than-light travel or even time travel, making them a popular concept in science fiction. However, there are major scientific challenges to their existence and stability. Most theories suggest that keeping a wormhole open would require "exotic matter" with negative energy density, something not yet observed. While wormholes remain an intriguing possibility in theoretical physics, there is currently no experimental evidence to confirm that they exist.</p>
+		 
+		<h3>Neutron Stars</h3>
+		<p>Neutron stars are incredibly dense remnants of massive stars that have undergone supernova explosions. When such a star exhausts its nuclear fuel, its core collapses under gravity, compressing protons and electrons into neutrons, resulting in a compact object with a radius of only about 10 to 15 kilometers but a mass greater than that of the Sun. Despite their small size, neutron stars have immense gravitational and magnetic fields, and their matter is so dense that a single teaspoon would weigh billions of tons on Earth. Some neutron stars emit beams of radiation from their magnetic poles and are observed as pulsars when these beams sweep past Earth. Studying neutron stars provides insight into extreme states of matter and the fundamental forces of nature.</p>
+		 
+		<h3>Supernova</h3>
+		<p>A supernova is a powerful and luminous explosion that occurs at the end of a star's life cycle. It marks the catastrophic death of a massive star, typically one at least eight times the mass of our Sun. When such a star exhausts its nuclear fuel, it can no longer support itself against gravitational collapse. This collapse triggers an enormous explosion that ejects the star’s outer layers into space, releasing an immense amount of energy and light. Supernovae play a critical role in the universe by dispersing heavy elements like carbon, oxygen, and iron—essential for the formation of planets and life—into the interstellar medium. They also give rise to neutron stars or black holes, depending on the mass of the original star.</p>
+		 
+		<h3>Dark Matter and Dark Energy</h3>
+		<p>Dark matter and dark energy are two mysterious components that together make up about 95% of the universe, yet remain largely unexplained. Dark matter, which accounts for around 27%, does not emit, absorb, or reflect light, making it invisible and detectable only through its gravitational effects on visible matter, such as stars and galaxies. It helps hold galaxies together and explains their rotational speeds. Dark energy, making up roughly 68% of the universe, is even more puzzling. It is thought to be responsible for the accelerated expansion of the universe, pushing galaxies apart at an ever-increasing rate. Despite their profound influence on the cosmos, both dark matter and dark energy remain among the greatest unsolved mysteries in modern physics and cosmology.</p>
+		 
+    </section>
+	      
+	
+    <footer>
+        <p>© 2025 VoidSeek | Exploring the Advanced Concepts</p>
+    </footer>
+	<script>
+        const data = {
+            "Black holes": {
+                title: "Black holes",
+                text: "Black holes are regions in space where gravity is so strong that nothing, not even light, can escape from them.",
+				image: "https://images.firstpost.com/wp-content/uploads/2019/04/Black-hole-travel_Discover.jpg"
+            },
+            "Supermassive Black holes": {
+                title: "Supermassive Black holes",
+                text: "Supermassive Black holes are enormous black holes, millions to billions of times the mass of the Sun, typically found at the centers of galaxies.",
+                image: "https://i.redd.it/alq9r4smpxdz.png"
+            },
+            "White holes": {
+                title: "White holes",
+                text: "White holes are hypothetical regions in space-time that are the reverse of black holes, expelling matter and energy and not allowing anything to enter.",
+                image: "https://static.wixstatic.com/media/9f77b3_0c96267a432c4784b51f9ca0c8f41a73~mv2.png/v1/fill/w_1000,h_677,al_c,q_90,usm_0.66_1.00_0.01/9f77b3_0c96267a432c4784b51f9ca0c8f41a73~mv2.png"
+            },
+			"Worm holes": {
+                title: "Worm holes",
+                text: "Worm holes are theoretical passages through space-time that could create shortcuts between distant parts of the universe.",
+				image: "https://cdn.mos.cms.futurecdn.net/n6LzftRUbAhUMCSWmi2Sji.jpg"
+            
+			},
+			"Neutron stars": {
+                title: "Neutron stars",
+                text: "Neutron stars are incredibly dense remnants of massive stars that have exploded in supernovae, composed almost entirely of tightly packed neutrons",
+				image: "https://scitechdaily.com/images/Neutron-Star-Artist-Impression-scaled.jpg"
+            
+			},
+			"Supernova": {
+                title: "Supernova",
+                text: "A Supernova is a powerful and luminous explosion that occurs at the end of a massive star’s life cycle, briefly outshining entire galaxies.",
+                image: "https://cff2.earth.com/uploads/2023/04/24071439/Star-explosion3-960x640.jpg"
+            },
+			"Dark Matter and Dark Energy": {
+                title: "Dark Matter and Dark Energy",
+                text: "Dark matter and dark energy are mysterious components of the universe, with dark matter providing invisible mass that holds galaxies together and dark energy driving the accelerated expansion of the universe.",
+				image: "https://i.ytimg.com/vi/h1inB5X8Jaw/maxresdefault.jpg"
+            }
+      
+        };
+
+        function openModal(topic) {
+            document.getElementById("modal-title").innerText = data[topic].title;
+            document.getElementById("modal-text").innerText = data[topic].text;
+            document.getElementById("modal-image").src = data[topic].image;
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+		
+    </script>
+	
+     
+    
+</body>
+</html>

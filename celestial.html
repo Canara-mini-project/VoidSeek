@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestial Objects</title>
+    <style>
+        /* Black & White Dark Theme */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px;
+            background: #111;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 15px;
+            background: #222;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .container {
+            margin: 30px auto;
+            width: 90%;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .card {
+            width: 140px;
+            height: 130px;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 15px;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .card:hover {
+            background: #333;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #222;
+            color: white;
+            margin: 5% auto;
+            padding: 30px;
+            width: 40%;
+            border-radius: 10px;
+            text-align: left;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .modal-content img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .close:hover {
+            color: red;
+        }
+
+        .info-section {
+            margin-top: 50px;
+            padding: 20px;
+            background: #111;
+            text-align: left;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .info-section img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+
+        
+        footer {
+            padding: 20px;
+            background: #222;
+            margin-top: 30px;
+        }
+		h1 a{
+		text-decoration:none;
+		color:inherit;
+		}
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><a href="home ham2.html">VoidSeek</a></h1>
+        <p>Exploring the celestial objects</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#stars">Stars</a></li>
+            <li><a href="#meteors">Meteors</a></li>
+            <li><a href="#nebulae">Nebulae</a></li>
+			<li><a href="#galaxies">Galaxies</a></li>
+			<li><a href="#constellations">Constellations</a></li>
+			<li><a href="#dwarf">Dwarf Planets</a></li>
+			<li><a href="#moons">Moons</a></li>
+            <li><a href="#asteroids">Asteroids</a></li>
+			<li><a href="#comets">Comets</a></li>
+			<li><a href="#medium">Interplanetary Medium</a></li>
+        
+		</ul>
+    </nav>
+
+    <section class="container">
+        <h2>Celestial Objects</h2>
+        <div class="cards">
+            <div class="card" onclick="openModal('stars')">Stars</div>
+            <div class="card" onclick="openModal('meteors')">Meteors</div>
+            <div class="card" onclick="openModal('nebulae')">Nebulae</div>
+			<div class="card" onclick="openModal('galaxies')">Galaxies</div>
+			<div class="card" onclick="openModal('constellations')">Constellations</div>
+			<div class="card" onclick="openModal('dwarf')">Dwarf Planets</div>
+			<div class="card" onclick="openModal('moons')">Moons</div>
+			<div class="card" onclick="openModal('asteroids')">Asteroids</div>
+			<div class="card" onclick="openModal('comets')">Comets</div>
+            <div class="card" onclick="openModal('medium')">Interplanetary Medium</div>
+		</div>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Astronomy Image">
+            <h3 id="modal-title"></h3>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <section class="info-section">
+        <h2>More About The Celestial Objects</h2>
+        
+        <h3>Stars</h3>
+        <p>Stars are massive, glowing spheres of hot gases, primarily hydrogen and helium, held together by gravity. They produce
+		light and heat through nuclear fusion reactions in their cores, converting hydrogen into helium. The Sun is the closes
+		t star to Earth and the primary source of energy for our planet. Stars vary in size, temperature, color, and brightness,
+		and they can live for millions to billions of years depending on their mass.
+
+</p>
+
+  
+
+
+        <h3>Meteors</h3>
+        <p>Comets are icy celestial bodies that orbit the Sun, often in elongated orbits. They are composed of frozen gases,
+		dust, and rock. When a comet approaches the Sun, the heat causes its ices to vaporize, creating a glowing coma and a 
+		tail that always points away from the Sun due to solar wind. Famous comets like Halley's Comet are visible from Earth 
+		
+		at regular intervals and have been observed for centuries.
+
+</p>
+        <h3>Nebulae</h3>
+		<p>Nebulae are vast clouds of gas and dust in space, often serving as the birthplaces of stars. They can form from the 
+		remnants of dying stars or from interstellar material clumping together. Some well-known nebulae, like the Orion Nebula, 
+		are visible through telescopes and appear in beautiful colors due to the light emitted or reflected by ionized gases. 
+		Nebulae can also be regions where new stars and planetary systems are formed.
+
+</p>
+		<h3>Galaxies</h3>
+		<p>Galaxies are immense systems containing billions of stars, along with gas, dust, and dark matter, all bound together 
+		by gravity. Our galaxy, the Milky Way, is just one of billions in the universe. Galaxies come in various shapes, such as
+		spiral, elliptical, and irregular. They can collide and merge over time, leading to new star formation and changes in their
+		structure.
+
+</p>
+		<h3>Constellations</h3>
+		<p>Constellations are patterns of stars in the sky that have been identified and named by different cultures throughout
+		history. They often represent mythological figures, animals, or objects. Though the stars in a constellation may not
+		be physically close to each other in space, from Earth's perspective, they appear to form distinct shapes. Constellations
+		are useful for navigation and storytelling and serve as a way to map the night sky.
+
+</p>
+		
+    <h3>Dwarf Planets</h3>
+        <p>Dwarf planets are celestial bodies that orbit the Sun and share some characteristics with regular planets but do not meet all the criteria set by the International 
+		Astronomical Union (IAU) for full-fledged planets. Specifically, they must orbit the Sun, have enough mass for their gravity to shape them into a nearly round form, and not
+		be a satellite of another body. However, they differ from planets because they have not cleared their orbital paths of other debris. As of now, five officially recognized dwarf
+		planets exist in our solar system: <b>Pluto, Eris, Haumea, Makemake, and Ceres</b>. Pluto, once considered the ninth planet, was reclassified as a dwarf planet in 2006. Eris, 
+		discovered in 2005, is slightly smaller than Pluto but has more mass. Haumea, known for its elongated shape due to its rapid rotation, and Makemake, which lacks an atmosphere,
+		are both located in the Kuiper Belt. Ceres, the smallest and the only dwarf planet in the asteroid belt between Mars and Jupiter, was the first to be classified as such. 
+		Scientists believe that more dwarf planets exist beyond Neptune in the Kuiper Belt and possibly in the Oort Cloud. These celestial objects are essential in understanding
+		planetary formation and the structure of our solar system.
+</p>
+        <h3>Moons</h3>
+		<p>Moons, or natural satellites, are celestial bodies that orbit planets, dwarf planets, and asteroids. Earth has one moon, while other planets have many—Jupiter has over 95, 
+		and Saturn has more than 146. Some moons, like Ganymede and Titan, are larger than Mercury, while others, like Phobos and Deimos, are tiny. Moons can influence planetary 
+		conditions, such as Earth’s tides. Some, like Europa and Enceladus, may have subsurface oceans that could support life. Even dwarf planets, like Pluto, have moons, with 
+		Charon being the most notable. Scientists are also searching for **exomoons** beyond our solar system.
+</p>
+		<h3>Asteroids</h3>
+		<p>Asteroids are rocky, airless remnants from the early solar system, primarily found in the <b>asteroid belt</b> between Mars and Jupiter. They vary in size from tiny
+		pebbles to nearly 1,000 km across, like <b>Ceres</b>, which is also classified as a dwarf planet. Asteroids are categorized into three main types: <b>carbonaceous (C-type),
+		silicate (S-type), and metallic (M-type)</b>, based on their composition. Some have orbits that bring them close to Earth, known as <b>Near-Earth Asteroids (NEAs)</b>, with
+		a few posing potential impact threats. Occasionally, asteroids collide, sending fragments into space, which may reach Earth as <b>meteoroids</b> and burn up as meteors.
+		Some asteroids have moons, and a few, like Bennu and Ryugu, have been studied up close by spacecraft. Scientists believe asteroids contain clues about the solar system’s
+		formation and could be future targets for mining valuable resources.
+</p>
+		<h3>Comets</h3>
+		<p>Comets are icy celestial bodies that originate from the <b>Kuiper Belt</b> and the distant <b>Oort Cloud</b>. They are composed of ice, dust, and rock, often described as 
+		"dirty snowballs." When a comet approaches the Sun, its ice vaporizes, creating a glowing <b>coma</b> and a long <b>tail</b> that always points away from the Sun due to solar 
+		wind. Comets follow highly elliptical orbits, with some taking thousands of years to return. Famous comets include <b>Halley’s Comet</b>, which orbits every 76 years, and <b>Comet 
+		NEOWISE</b>, which was visible in 2020. Some comets break apart due to gravitational forces or collisions, and their debris can create meteor showers when Earth passes 
+		through their remnants. Scientists study comets because they contain ancient materials from the early solar system, possibly offering clues about the origins of water and life
+		on Earth.
+</p>
+		<h3>Interplanetory Medium</h3>
+		<p>The <b>interplanetary medium (IPM)</b> is the space between planets within a solar system, filled with a mix of charged particles, magnetic fields, and cosmic dust.
+		It is primarily made up of the <b>solar wind</b>, a continuous stream of charged particles (mainly electrons and protons) ejected by the Sun. The solar wind interacts with 
+		planetary magnetospheres and can cause space weather effects like auroras. The IPM also contains <b>cosmic rays</b>, high-energy particles from outside the solar system,
+		and <b>micrometeoroids</b>, tiny dust particles from comets and asteroids. The structure of the IPM is shaped by the Sun’s magnetic field, forming the <b>heliosphere</b>
+		, a vast bubble surrounding the solar system. The boundary where the solar wind meets interstellar space is called the <b>heliopause</b>. Studying the interplanetary medium
+		helps scientists understand space weather, planetary interactions, and the broader dynamics of our solar system.
+</p>		
+            
+    </section>
+
+
+		
+
+    <footer>
+        <p>© 2025 VoidSeek | Celestial Objects</p>
+    </footer>
+	<script>
+        const data = {
+            "stars": {
+                title: "Stars",
+                text: "Stars are giant, glowing spheres of hot gas that shine brightly in the night sky.",
+                image: "https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.jpg"
+            },
+            "meteors": {
+                title: "Meteors",
+                text: "Meteors are streaks of light in the sky caused by space rocks burning up as they enter Earth’s atmosphere.",
+                image: "meteor.jpg"
+            },
+            "nebulae": {
+                title: "Nebulae",
+                text: "Nebulae are vast clouds of gas and dust in space where new stars are born.",
+                image: "nebulae1.jpg"
+            },
+            "galaxies": {
+                title: "Galaxies",
+                text: "Galaxies are vast cosmic tapestries, where stars are stitched into the fabric of time and space.",
+                image: "galaxy1.jpg"
+            },
+            "constellations": {
+                title: "Constellations",
+                text: "Constellations are ancient stories written in stars, connecting the night sky with the myths of humankind.",
+                image: "constellations.jpg"
+            },
+            "dwarf": {
+                title: "Dwarf planets",
+                text: "Dwarf planets are small celestial wanderers, holding secrets of the solar system's early days in their quiet orbits",
+                image: "dwarf.jpg"
+            },
+            "moons": {
+                title: "Moons",
+                text: "Moons are silent companions to planets, dancing through space and shaping worlds with their gravitational pull.",
+                image: "moons.jpg"
+            },
+            "asteroids": {
+                title: "Asteroids",
+                text: "Asteroids are rocky remnants of creation, drifting through space as timeworn messengers from the solar system's birth",
+                image: "asteroids.jpeg"
+            },
+            "comets": {
+                title: "Comets",
+                text: "Comets are icy voyagers, blazing brilliant trails as they journey through the darkness of space.",
+                image: "comets.jpg"
+            },
+            "medium": {
+                title:"Interplanetory medium",
+                text: "The interplanetary medium is the invisible sea of charged particles and magnetic fields that fills the space between planets..",
+                image: "medium.jpg"
+            }
+        };
+
+        function openModal(topic) {
+            document.getElementById("modal-title").innerText = data[topic].title;
+            document.getElementById("modal-text").innerText = data[topic].text;
+            document.getElementById("modal-image").src = data[topic].image;
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+		const img = document.createElement("img");
+		img.src = data.galaxies.image;
+		img.width = data.galaxies.width;
+		img.height = data.galaxies.height;
+    </script>
+
+</body>
+</html>

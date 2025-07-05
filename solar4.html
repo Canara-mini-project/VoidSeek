@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+    <style>
+        /* Black & White Dark Theme */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px;
+            background: #111;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 15px;
+            background: #222;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .container {
+            margin: 30px auto;
+            width: 90%;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .card {
+            width: 140px;
+            height: 130px;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 15px;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .card:hover {
+            background: #333;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #222;
+            color: white;
+            margin: 5% auto;
+            padding: 30px;
+            width: 40%;
+            border-radius: 10px;
+            text-align: left;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .modal-content img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .close:hover {
+            color: red;
+        }
+
+        .info-section {
+            margin-top: 50px;
+            padding: 20px;
+            background: #111;
+            text-align: left;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .info-section img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+
+        
+        footer {
+            padding: 20px;
+            background: #222;
+            margin-top: 30px;
+        }
+		 .solar-system-container {
+            text-align: center;
+            position: relative;
+            width: 850px;
+            height: 500px;
+            margin: 50px auto;
+            background-color: #070938;
+        }
+
+        /* Sun styling */
+        .sun {
+            width: 100px;
+            height: 100px;
+            background-color: #ffcc00;
+            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: 0 0 50px 10px rgba(255, 204, 0, 0.7);
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Planet Orbits */
+        .orbit {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 15s linear infinite;
+        }
+
+        /* Planet Styling */
+        .planet {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: #ffb6b9;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* Planet Colors */
+        .mercury { background-color: #b0b0b0; }
+        .venus { background-color: #f9e9a8; }
+        .earth { background-color: #3a7ecf; }
+        .mars { background-color: #e33e26; }
+        .jupiter { background-color: #d69b3e; }
+        .saturn { background-color: #c2a16e; }
+        .uranus { background-color: #7bb5d1; }
+        .neptune { background-color: #446bc5; }
+		
+		.mercury {height:10px width:10px }
+        .venus { height:15px width:15px }
+        .earth { height:20px width:20px }
+        .mars {height:25px width:25px }
+        .jupiter {height:10px width:10px   }
+        .saturn { height:10px width:10px  }
+        .uranus { height:10px width:10px  }
+        .neptune {height:10px width:10px  }
+
+        /* Rotation animation */
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+    body {
+      margin: 0;
+      background-color: #000;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+    canvas {
+      display: block;
+      background-color: #000;
+    
+  }
+  }
+  h1 a {
+  text-decoration:none;
+  color:inherit;
+  }
+  
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><a href="home ham2.html">VoidSeek</a></h1>
+        <p>Exploring our solar system</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#sun">The Sun</a></li>
+            <li><a href="#planets">Planets</a></li>
+            
+
+        </ul>
+    </nav>
+
+    <section class="container">
+        <h2>Solar System</h2>
+        <div class="cards">
+            <div class="card" onclick="openModal('sun')">The Sun</div>
+            <div class="card" onclick="openModal('planets')">Planets</div>
+           
+        </div>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Astronomy Image">
+            <h3 id="modal-title"></h3>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <section class="info-section">
+        <h2>More About Our Solar System</h2>
+        
+        <h3>The Sun</h3>
+        <p>The Sun is a <b>G-type main-sequence star (G2V)</b>and the center of our solar system, around <b>4.6 billion years old</b>. It is approximately <b>1.39 million km in diameter</b> and 
+		composed mostly of <b>hydrogen (74%) and helium (24%)</b>, with nuclear fusion in its <b>15-million-degree Celsius core</b>converting hydrogen into helium and releasing energy. This 
+		energy moves through the <b>radiative and convective zones</b> before reaching the <b>photosphere</b>, the Sun’s visible surface. Surrounding layers include the <b>chromosphere</b> and 
+		the <b>corona</b>, which extends millions of kilometers into space, emitting solar wind. The Sun undergoes an <b>11-year solar cycle</b>, marked by <b>sunspots, solar flares, and 
+		coronal mass ejections</b>, which can impact Earth's magnetosphere, causing auroras and occasionally disrupting communications. As the primary source of energy, the Sun drives 
+		Earth's climate, supports photosynthesis, and sustains life. In about <b>5 billion years</b>, it will expand into a <b>red giant</b>, shedding its outer layers before becoming a 
+		<b>white dwarf</b>. Despite its constant activity, the Sun remains the vital force maintaining the balance of our solar system. ☀
+</p>
+
+        <h3>Planets</h3>
+        <p><ol>
+		<li><h4> Mercury</h4> 
+Mercury is the <b>smallest and closest planet to the Sun</b>, orbiting at an average distance of <b>57.9 million km</b>. It has a <b>thin atmosphere</b> mostly composed of oxygen,
+ sodium, and hydrogen, making it incapable of retaining heat. As a result, temperatures range from <b>430°C (800°F) during the day</b> to <b>-180°C (-290°F) at night</b>. Mercury has
+ a heavily cratered surface similar to the Moon and lacks any significant geological activity. It has the <b>fastest orbit</b> around the Sun, completing a revolution in just
+ <b>88 days</b>, but it rotates very slowly, taking <b>59 Earth days</b> to complete one rotation. Due to its proximity to the Sun and lack of an atmosphere, it experiences 
+ extreme temperature fluctuations. </li>
+<li><h4>Venus</h4> 
+Often called <b>Earth’s twin</b> due to its similar size and composition, Venus is actually the <b>hottest planet in the solar system</b> with an average surface temperature
+ of <b>467°C (872°F)</b>. Its thick atmosphere is composed mostly of <b>carbon dioxide</b> with clouds of <b>sulfuric acid</b>, creating a strong <b>greenhouse effect</b> that traps 
+ heat. Venus has a very slow and <b>retrograde rotation</b>, meaning it spins backward compared to most planets, taking <b>243 Earth days</b> to rotate once but only <b>225 days</b> to 
+ complete an orbit around the Sun. The planet’s surface is covered in <b>volcanoes, mountains, and vast plains</b>, with evidence of past volcanic activity. Due to its 
+ extreme conditions, Venus is one of the most hostile planets in the solar system.</li>  
+<li><h4>Earth</h4>  
+Earth is the <b>only planet known to support life</b>, with an atmosphere composed of <b>78% nitrogen, 21% oxygen</b>, and trace gases that regulate temperature. It has a stable
+ climate, liquid water covering <b>71% of its surface</b>, and a protective <b>magnetosphere</b> that shields it from harmful solar radiation. Earth orbits the Sun at an average
+ distance of <b>149.6 million km</b> and completes one revolution in <b>365.25 days</b> while rotating every <b>24 hours</b>. The planet has <b>diverse ecosystems, ranging from deserts
+ to rainforests</b>, and is home to over <b>8.7 million species</b>. Earth's <b>natural satellite, the Moon</b>, affects tides and stabilizes its axial tilt, which is responsible
+ for seasons.</li> 
+<li><h4>Mars</h4>
+Known as the <b>Red Planet</b> due to its iron-rich soil, Mars is the <b>second smallest planet</b> and orbits the Sun at an average distance of <b>227.9 million km</b>. It has
+ a <b>thin atmosphere of carbon dioxide</b>, making it incapable of supporting liquid water on the surface, though <b>polar ice caps and evidence of ancient rivers</b> suggest
+ it once had a wetter climate. Mars has the <b>largest volcano in the solar system, Olympus Mons</b>, and the <b>deepest canyon, Valles Marineris</b>. It takes <b>687 Earth days</b>
+ to orbit the Sun and <b>24.6 hours</b> to complete a rotation, making its day length similar to Earth's. Mars is the primary focus of space exploration, with multiple rovers and
+ planned missions for potential future colonization.</li>
+<li><h4>Jupiter</h4>  
+Jupiter is the <b>largest planet in the solar system</b>, with a mass over <b>318 times that of Earth</b> and a thick atmosphere composed mainly of <b>hydrogen and helium</b>. It is
+ known for the <b>Great Red Spot</b>, a massive storm that has raged for centuries. Jupiter has a <b>strong magnetic field</b> and at least <b>95 known moons</b>, including <b>Ganymede</b>
+ , the largest moon in the solar system. The planet completes a <b>fast rotation in just 10 hours</b>, giving it a flattened shape, while its orbit around the Sun takes <b>12 Earth years</b>
+ . Jupiter has no solid surface, as it is a <b>gas giant</b>, but its core is believed to be rocky or metallic. Its powerful gravity helps shield the inner planets from asteroid impacts.</li>
+ <li><h4>Saturn</h4>  
+Saturn is famous for its <b>magnificent ring system</b>, composed of <b>ice and rock particles</b>. It is the <b>second-largest planet</b> in the solar system and, like Jupiter, is
+ a <b>gas giant</b> primarily made of <b>hydrogen and helium</b>. Saturn’s <b>density is so low that it could float on water</b> if a large enough body existed. It has <b>over 146 moons</b>
+ , with <b>Titan</b>, its largest moon, being one of the most Earth-like bodies in the solar system due to its dense atmosphere and liquid methane lakes. Saturn takes <b>29.5 Earth years</b>
+ to complete an orbit and rotates rapidly, completing a day in just <b>10.7 hours</b>. The planet's winds can reach speeds of ,<b>800 km/h (1,118 mph)</b>, making it one of the windiest
+ places in the solar system.</li>
+<li><h4>Uranus</h4> 
+Uranus is an <b>ice giant</b> with a unique <b>tilt of 98 degrees</b>, meaning it essentially rolls on its side as it orbits the Sun. This extreme tilt causes <b>42-year-long seasons</b>
+, where one hemisphere experiences continuous daylight while the other is in darkness. It has a <b>pale blue-green color</b> due to methane in its atmosphere, which absorbs red light. 
+Uranus is mostly composed of <b>water, ammonia, and methane ice</b>, and its atmosphere contains some of the coldest temperatures in the solar system, reaching <b>-224°C (-371°F)</b>
+. It has <b>13 faint rings</b> and <b>27 known moons</b>, with <b>Miranda</b> being one of the most geologically active. Uranus takes <b>84 Earth years</b> to complete an orbit and 
+rotates in <b>17.2 hours</b>.</li>
+<li><h4>Neptune</h4>  
+Neptune, the <b>farthest planet from the Sun</b>, is also an <b>ice giant</b> like Uranus but appears deep blue due to higher methane concentrations. It has the <b>strongest winds in
+ the solar system</b>, reaching speeds of <b>2,100 km/h (1,300 mph)</b>. Neptune orbits the Sun at an average distance of <b>4.5 billion km</b>, taking <b>165 Earth years</b> to
+ complete one revolution. Its <b>largest moon, Triton</b>, orbits <b>backward</b>, suggesting it was captured from the Kuiper Belt. The planet has <b>six faint rings</b> and <b>14 
+ known moons</b>. Due to its distance, Neptune receives very little sunlight, and its interior heat contributes significantly to its weather patterns, including massive storms like 
+ the <b>Great Dark Spot</b>.</li>  
+</ol>
+</p>
+
+
+        
+    </section>
+
+
+		
+	   
+
+   
+<canvas id="solarSystem"></canvas>
+
+    <script>
+       const canvas = document.getElementById('solarSystem');
+    const ctx = canvas.getContext('2d');
+
+    let width, height;
+    function resize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Planet data
+    const planets = [
+      { name: 'Mercury', color: '#a9a9a9', radius: 4, distance: 60, speed: 0.02, angle: Math.PI / 4 },
+      { name: 'Venus', color: '#f5deb3', radius: 7, distance: 90, speed: 0.015, angle: 0 },
+      { name: 'Earth', color: '#1e90ff', radius: 8, distance: 130, speed: 0.01, angle: 0 },
+      { name: 'Mars', color: '#ff4500', radius: 6, distance: 170, speed: 0.008, angle: 0 },
+      { name: 'Jupiter', color: '#f4a460', radius: 14, distance: 220, speed: 0.005, angle: 0 },
+      { name: 'Saturn', color: '#deb887', radius: 12, distance: 270, speed: 0.004, angle: 0 },
+      { name: 'Uranus', color: '#87cefa', radius: 10, distance: 310, speed: 0.003, angle: 0 },
+      { name: 'Neptune', color: '#4169e1', radius: 10, distance: 350, speed: 0.002, angle: 0 },
+    ];
+
+    function drawSun(x, y) {
+      const gradient = ctx.createRadialGradient(x, y, 20, x, y, 50);
+      gradient.addColorStop(0, '#ffff00');
+      gradient.addColorStop(1, '#ffa500');
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(x, y, 50, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    function drawPlanet(planet, sunX, sunY) {
+      const x = sunX + planet.distance * Math.cos(planet.angle);
+      const y = sunY + planet.distance * Math.sin(planet.angle);
+
+      // Orbit path
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(sunX, sunY, planet.distance, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // Planet
+      ctx.fillStyle = planet.color;
+      ctx.beginPath();
+      ctx.arc(x, y, planet.radius, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Name
+      ctx.fillStyle = 'white';
+      ctx.font = '12px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText(planet.name, x, y - planet.radius - 10);
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      const sunX = width / 2;
+      const sunY = height / 2;
+
+      drawSun(sunX, sunY);
+
+      planets.forEach(planet => {
+        drawPlanet(planet, sunX, sunY);
+        planet.angle += planet.speed;
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+    </script>
+<footer>
+        <p>© 2025 VoidSeek | Solar System</p>
+    </footer>
+	<script>
+        const data = {
+            "sun": {
+                title: "The Sun",
+                text: "The sun is a glowing ball of hot gases that gives light and heat to our solar system.",
+                image: "https://qea.virtuasalute.com/wp-content/uploads/2020/11/ts-space-sun-and-solar-viewing-facts-versus-fiction.jpg"
+            },
+            "planets": {
+                title: "The Planets",
+                text: "The planets are celestial bodies that orbit the sun, each with unique features and paths.",
+                image: "https://static.wixstatic.com/media/d8a647_278a4a67c6734cc297a614656b5f1b9d~mv2.jpg/v1/fill/w_864,h_556,al_c,lg_1,q_85/d8a647_278a4a67c6734cc297a614656b5f1b9d~mv2.jpg"
+            }
+        };
+
+        function openModal(topic) {
+            document.getElementById("modal-title").innerText = data[topic].title;
+            document.getElementById("modal-text").innerText = data[topic].text;
+            document.getElementById("modal-image").src = data[topic].image;
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+
+
+</body>
+</html>

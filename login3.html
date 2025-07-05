@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Login Form</title>
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: Arial, sans-serif;
+      }
+
+      body {
+         height: 100vh;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('login bg.jpg') no-repeat center center/cover;
+         background-color: #333; /* Fallback */
+            }
+	.container {
+         background: rgba(0, 0, 0, 0.5);
+         padding: 2rem;
+         border-radius: 15px;
+         width: 350px;
+         box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+      }
+
+      .login__title {
+         text-align: center;
+         font-size: 28px;
+         color: #ff7200;
+         margin-bottom: 1.5rem;
+         background: #fff;
+         color: #ff7200;
+         padding: 10px;
+         border-radius: 8px;
+      }
+
+      .login__content {
+         display: flex;
+         flex-direction: column;
+         gap: 1.2rem;
+      }
+
+      .login__box {
+         display: flex;
+         align-items: center;
+         background: transparent;
+         border-bottom: 2px solid #ff7200;
+         padding: 0.5rem;
+      }
+
+      .login__icon {
+         font-size: 20px;
+         margin-right: 10px;
+         color: #fff;
+      }
+
+      .login__box-input {
+         flex: 1;
+         position: relative;
+      }
+
+      .login__input {
+         width: 100%;
+         background: transparent;
+         border: none;
+         outline: none;
+         color: #fff;
+         font-size: 16px;
+         padding: 0.2rem 0;
+      }
+
+      .login__label {
+         position: absolute;
+         top: -18px;
+         left: 0;
+         font-size: 14px;
+         color: #fff;
+         pointer-events: none;
+      }
+
+      .login__eye {
+         position: absolute;
+         right: 0;
+         top: 0;
+         cursor: pointer;
+         color: #fff;
+      }
+
+      .login__check {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         margin: 1rem 0;
+         font-size: 14px;
+      }
+
+      .login__check-input {
+         margin-right: 5px;
+      }
+
+      .login__forgot {
+         color: #ff7200;
+         text-decoration: none;
+      }
+
+      .login__forgot:hover {
+         text-decoration: underline;
+      }
+
+      .login__button {
+         width: 100%;
+         padding: 0.8rem;
+         background-color: #ff7200;
+         border: none;
+         color: #fff;
+         font-size: 16px;
+         border-radius: 8px;
+         cursor: pointer;
+         transition: 0.3s ease;
+      }
+
+      .login__button:hover {
+         background-color: #fff;
+         color: #ff7200;
+      }
+
+      .login__register {
+         text-align: center;
+         margin-top: 1rem;
+         font-size: 14px;
+      }
+
+      .login__register a {
+         color: #ff7200;
+         text-decoration: none;
+      }
+
+      .login__register a:hover {
+         text-decoration: underline;
+      }
+   </style>
+</head>
+<body>
+
+   <form class="container">
+      <h1 class="login__title">Login</h1>
+
+      <div class="login__content">
+         <div class="login__box">
+            <i class="ri-user-3-line login__icon"></i>
+            <div class="login__box-input">
+               <input type="email" required class="login__input" id="login-email" placeholder=" ">
+               <label for="login-email" class="login__label">Email</label>
+            </div>
+         </div>
+
+         <div class="login__box">
+            <i class="ri-lock-2-line login__icon"></i>
+            <div class="login__box-input">
+               <input type="password" required class="login__input" id="login-pass" placeholder=" ">
+               <label for="login-pass" class="login__label">Password</label>
+               <i class="ri-eye-off-line login__eye" id="login-eye"></i>
+            </div>
+         </div>
+      </div>
+
+      <div class="login__check">
+         <div>
+            <input type="checkbox" class="login__check-input" id="login-check">
+            <label for="login-check" class="login__check-label">Remember me</label>
+         </div>
+         <a href="#" class="login__forgot">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="login__button">Login</button>
+
+      <p class="login__register">
+         Don't have an account? <a href="register.html">Register</a>
+      </p>
+   </form>
+
+   <!-- 👁 Eye toggle script -->
+   <script>
+      const eyeIcon = document.getElementById('login-eye');
+      const passwordInput = document.getElementById('login-pass');
+
+      eyeIcon.addEventListener('click', () => {
+         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+         passwordInput.setAttribute('type', type);
+
+         // Toggle icon class
+         if (type === 'text') {
+            eyeIcon.classList.remove('ri-eye-off-line');
+            eyeIcon.classList.add('ri-eye-line');
+         } else {
+            eyeIcon.classList.remove('ri-eye-line');
+            eyeIcon.classList.add('ri-eye-off-line');
+         }
+      });
+   </script>
+
+</body>
+</html>

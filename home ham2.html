@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Voidseek</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: rgba(0, 0, 0, 0.95);
+      color: white;
+      position: fixed;
+      left: -250px;
+      top: 0;
+      height: 100%;
+      transition: left 0.4s ease;
+      padding: 20px;
+      z-index: 1000;
+      overflow-y: auto;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .menu-item {
+      margin-bottom: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .menu-item:hover {
+      color: #ff7200;
+    }
+	.menu-item a{
+	color:white;
+	text-decoration:none;
+	}
+	.menu-item a:hover{
+	color:#ff7200;
+	}
+
+    .submenu {
+      margin-top: 5px;
+      padding-left: 15px;
+      display: none;
+    }
+
+    .submenu a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 5px 0;
+    }
+
+    .submenu a:hover {
+      color: #ff7200;
+    }
+
+    .main {
+      flex: 1;
+      transition: transform 0.4s ease;
+      background: linear-gradient(to top, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 50%), url('home.jpg') no-repeat center center/cover;
+      color: white;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 30px;
+      position: relative;
+      left: 0;
+    }
+
+    .main.shifted {
+      transform: translateX(250px);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .logo {
+      font-size: 30px;
+      margin-left: 20px;
+    }
+
+    .hamburger {
+      cursor: pointer;
+      width: 30px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-right: 15px;
+    }
+
+    .hamburger span {
+      height: 4px;
+      background: white;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .hamburger:hover span {
+      background: #ff7200;
+    }
+
+    .content {
+      margin-top: 50px;
+      padding: 20px;
+    }
+
+    .content h1 {
+      font-size: 50px;
+      line-height: 1.4;
+    }
+
+    .content span {
+      color: #ff7200;
+      font-size: 60px;
+    }
+
+    .content .par {
+      margin-top: 20px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+      <div class="menu-item"><a href="login3.html"> LOGIN</a>
+      </div>
+      <div class="menu-item">CONTENTS
+        <div class="submenu">
+          <a href="solar4.html">The Solar System</a>
+          <a href="celestial.html">Celestial Objects</a>
+          <a href="blackhole2.html">Advanced Astronomical Concepts</a>
+          <a href="stellar.html">Stellar Evolution</a>
+          <a href="mission.html">Space Missions</a>
+          <a href="techs.html">Space Technology</a>
+		  <a href="unsolved problems in astronomy.html">Unsolved Problems In Astronomy</a>
+          <a href="space phenomena.html">Space Phenomena</a>
+		  <a href="travel2.html">Pioneers Beyond Earth</a>
+		  <a href="laws.html">Astronomical Laws And Theories</a>
+		  <a href="dates.html">Important Dates and Events</a>
+        </div>
+      </div>
+      <div class="menu-item">
+          <a href="quiz4.html">QUIZ</a>
+      </div>
+	  <div class="menu-item">
+          <a href="pod.html">ASTRONOMY PICTURE OF THE DAY</a>
+      </div>
+      <div class="menu-item">
+         <a href="about4.html">ABOUT</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main" id="mainContent">
+      <div class="navbar">
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <h2 class="logo">Voidseek</h2>
+      </div>
+
+      <div class="content">
+        <h1>VOIDSEEK<br><span>Learn with us</span><br>The Beauty Of our Universe</h1>
+        <p class="par">Learn the great mysteries and many facts<br>solve quiz and interact<br>THANK YOU</p>
+      </div>
+    </div>
+	</div>
+
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const sidebar = document.getElementById("sidebar");
+    const mainContent = document.getElementById("mainContent");
+
+    const menuItems = document.querySelectorAll(".menu-item");
+
+    hamburger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      sidebar.classList.toggle("active");
+      mainContent.classList.toggle("shifted");
+    });
+
+    document.body.addEventListener("click", (e) => {
+      if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+        sidebar.classList.remove("active");
+        mainContent.classList.remove("shifted");
+        document.querySelectorAll('.submenu').forEach(sub => sub.style.display = "none");
+      }
+    });
+
+    menuItems.forEach(item => {
+      item.addEventListener("click", function (e) {
+        e.stopPropagation();
+        const submenu = this.querySelector(".submenu");
+        const isVisible = submenu.style.display === "block";
+        document.querySelectorAll('.submenu').forEach(sub => sub.style.display = "none");
+        if (!isVisible) submenu.style.display = "block";
+      });
+    });
+  </script>
+</body>
+</html>

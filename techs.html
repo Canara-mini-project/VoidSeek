@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Technology</title>
+    <style>
+        /* Black & White Dark Theme */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px;
+            background: #111;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 15px;
+            background: #222;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .container {
+            margin: 30px auto;
+            width: 90%;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .card {
+            width: 140px;
+            height: 130px;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 15px;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .card:hover {
+            background: #333;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+        }
+
+       .modal-content {
+            background: #222;
+            color: white;
+            margin:0% auto;
+            padding:30px;
+            width: 40%;
+			border-radius: 2px;
+            text-align: left;
+			box-shadow: 0 0 0px rgba(255, 255, 255, 0.3);
+        }
+
+        .modal-content img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .close:hover {
+            color: red;
+        }
+
+        .info-section {
+            margin-top: 50px;
+            padding: 20px;
+            background: #111;
+            text-align: left;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .info-section img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+
+        
+        footer {
+            padding: 20px;
+            background: #222;
+            margin-top: 30px;
+        }
+		 h1 a {
+		 text-decoration:none;
+		 color:inherit;
+		 }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><a href="home ham2.html">VoidSeek</a></h1>
+        <p>Exploring the Space Technology</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#darkmatter">Artificial Satellites</a></li>
+            <li><a href="#aliens"></a>Space Telescopes</li>
+            <li><a href="#exploration">Spectroscopes</a></li>
+			<li><a href="#exploration">Spaceships</a></li>
+			
+        </ul>
+    </nav>
+
+    <section class="container">
+        <h2>Space Technology</h2>
+        <div class="cards">
+            <div class="card" onclick="openModal('Artificial Satellites')">Artificial Satellites</div>
+            <div class="card" onclick="openModal('Space Telescopes')">Space Telescopes</div>
+            <div class="card" onclick="openModal('Spectroscopes')">Spectroscopes</div>
+			<div class="card" onclick="openModal('Spaceships')">Spaceships</div>
+        </div>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Astronomy Image">
+            <h3 id="modal-title"></h3>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <section class="info-section">
+        <h2>Space Technology</h2>
+        
+        <h3>Artificial Satellites</h3>
+        <p>Artificial satellites are human-made objects intentionally placed into orbit around the Earth or other celestial bodies. They serve a wide range of purposes, including communication, weather monitoring, navigation, scientific research, and Earth observation. Since the launch of Sputnik 1 in 1957—the world’s first artificial satellite—thousands of satellites have been sent into space by various countries and organizations. These satellites vary in size and function, from small CubeSats used for educational and research purposes to large, complex satellites like the International Space Station. Artificial satellites play a crucial role in modern life by enabling global telecommunications, GPS systems, climate tracking, and space science, making them indispensable tools for both everyday activities and scientific discovery.</p>
+        
+        <h3>Space Telescope</h3>
+        <p>Space telescopes are advanced observatories located beyond Earth's atmosphere, designed to capture clearer and more detailed images of the universe than ground-based telescopes. By operating in space, they avoid atmospheric distortion, light pollution, and weather conditions that can blur or block observations. Famous space telescopes like the Hubble Space Telescope have revolutionized our understanding of galaxies, stars, and planets by providing breathtaking images and valuable data. More recent telescopes, such as the James Webb Space Telescope, observe in infrared light to peer even deeper into the cosmos, studying the formation of stars and the early universe. Space telescopes have become essential tools for astronomers, allowing humanity to explore the universe with unprecedented clarity and depth.</p>
+		
+		<h3>Spectroscopes</h3>
+        <p>Spectroscopes are scientific instruments used to analyze light by splitting it into its component colors or wavelengths, creating a spectrum. By studying these spectra, scientists can determine the composition, temperature, motion, and other properties of stars, planets, and other celestial objects. Each element emits or absorbs light at specific wavelengths, producing unique spectral lines that act like fingerprints. This makes spectroscopes invaluable in astronomy for identifying the chemical makeup of distant stars and galaxies. Beyond space, spectroscopes are also used in chemistry, physics, and environmental science, helping researchers understand everything from material composition to pollution levels.</p>
+ 		
+
+		<li>Hubble</ol>
+		<p>The Hubble Space Telescope is one of the most important and successful astronomical instruments ever launched into space. Launched in 1990 by NASA, Hubble orbits above Earth’s atmosphere, allowing it to capture incredibly sharp and detailed images of distant stars, galaxies, and other cosmic phenomena without atmospheric distortion. Over the decades, Hubble has provided groundbreaking discoveries, including evidence of the universe’s accelerating expansion, detailed observations of black holes, and stunning views of nebulae and distant galaxies. Its data has transformed our understanding of the cosmos and inspired countless scientific studies and public interest in space. Despite its age, Hubble continues to operate and deliver valuable information alongside newer space telescopes.</p>
+		
+		<h3>Spaceships</h3>
+        <p>Spaceships are specially designed vehicles built to travel beyond Earth’s atmosphere, enabling humans and equipment to explore space. They come in various forms, from crewed capsules like NASA’s Apollo and SpaceX’s Crew Dragon, which transport astronauts safely to and from space, to robotic probes that explore distant planets and moons without human passengers. Spaceships are equipped with life support systems, navigation controls, and propulsion technologies to survive and operate in the harsh environment of space. They play a crucial role in missions to the International Space Station, lunar landings, Mars explorations, and beyond, helping humanity expand its reach into the cosmos.</p>
+        
+	</section>
+	
+
+    <footer>
+        <p>© 2025 VoidSeek | Space Technology</p>
+    </footer>
+	<script>
+        const data = {
+            "Artificial Satellites": {
+                title: "Artificial Satellites",
+                text: "Artificial satellites are human-made objects placed in orbit around Earth or other celestial bodies to collect data, support communication, navigation, and scientific research.",
+                image: "https://starwalk.space/gallery/images/satellites-news/1920x1080"
+            },
+            "Space Telescopes": {
+                title: "Space Telescopes",
+                text: "Space telescopes are astronomical instruments placed in orbit to observe celestial objects without atmospheric interference.",
+                image: "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2000/09/hubble_space_telescope_hst_courtesy_of_nasa/9229648-5-eng-GB/Hubble_Space_Telescope_HST_courtesy_of_NASA.jpg"
+            },
+            "Spectroscopes": {
+                title: "Spectroscopes",
+                text: "Spectroscopes are instruments used to analyze the light spectrum emitted, absorbed, or reflected by substances to determine their composition.",
+				image: "https://www.mineralogy.eu/optical/spectroscopes/images/spectro_Kruss03.jpg"
+			},
+            "Spaceships": {
+                title: "Spaceships",
+                text: "Spaceships are vehicles designed for travel or operation in outer space, carrying astronauts, equipment, or cargo.",
+                image: "https://cdn.wallpapersafari.com/61/24/qycDXt.jpg"
+            }
+        };
+
+        function openModal(topic) {
+            document.getElementById("modal-title").innerText = data[topic].title;
+            document.getElementById("modal-text").innerText = data[topic].text;
+            document.getElementById("modal-image").src = data[topic].image;
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Important Dates and Events in Space Exploration</title>
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #0a1128, #001f54);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #e0e7ff;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #2563eb;
+      user-select: none;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #60a5fa;
+      letter-spacing: 2px;
+      text-shadow: 0 0 6px #60a5faaa;
+    }
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+    /* The vertical line */
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: linear-gradient(180deg, #2563eb, #60a5fa);
+      border-radius: 2px;
+      transform: translateX(-50%);
+      box-shadow: 0 0 10px #60a5fa88;
+      z-index: 1;
+    }
+    .event {
+      position: relative;
+      width: 45%;
+      background: rgba(15, 32, 64, 0.85);
+      border-radius: 12px;
+      padding: 1.8rem 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 8px 25px rgb(96 165 250 / 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 2;
+      color: #cbd5e1;
+      border: 1px solid #2563ebaa;
+    }
+    .event:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px #60a5facc;
+      border-color: #60a5fa;
+      color: #f0f9ff;
+    }
+    /* Date badge */
+    .event::before {
+      content: attr(data-date);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #60a5fa;
+      color: #001021;
+      font-weight: 700;
+      padding: 0.55rem 1.3rem;
+      border-radius: 30px;
+      box-shadow: 0 0 8px #60a5faaa;
+      font-size: 0.9rem;
+      user-select: none;
+      white-space: nowrap;
+      width: max-content;
+      max-width: 120px;
+      text-align: center;
+      letter-spacing: 0.7px;
+      z-index: 10;
+    }
+    /* Position left and right */
+    .event.left {
+      left: 0;
+      text-align: left;
+    }
+    .event.left::before {
+      right: -140px;
+      top: 50%;
+    }
+    .event.right {
+      left: 55%;
+      text-align: left;
+    }
+    .event.right::before {
+      left: -140px;
+      top: 50%;
+    }
+    /* Heading */
+    .event h3 {
+      margin: 0 0 0.75rem 0;
+      color: #93c5fd;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+    }
+    /* Description */
+    .event p {
+      margin: 0;
+      font-size: 1rem;
+      color: #d1d5db;
+      line-height: 1.4;
+    }
+
+    /* Responsive for smaller devices */
+    @media (max-width: 850px) {
+      .timeline::before {
+        left: 20px;
+      }
+      .event {
+        width: calc(100% - 60px);
+        left: 40px !important;
+      }
+      .event::before {
+        left: -130px !important;
+        right: auto !important;
+        top: 20px !important;
+        transform: none !important;
+      }
+      .event + .event {
+        margin-top: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Important Dates and Events in Space Exploration</h1>
+  </header>
+
+  <div class="timeline">
+    <div class="event left" data-date="Oct 1, 1958">
+      <h3>NASA Established</h3>
+      <p>The U.S. National Aeronautics and Space Administration was created, spearheading American space exploration efforts worldwide.</p>
+    </div>
+    <div class="event right" data-date="Apr 19, 1975">
+      <h3>India’s First Satellite Launch</h3>
+      <p>India launched its first satellite, Aryabhata, marking the beginning of its journey into space technology and research.</p>
+    </div>
+    <div class="event left" data-date="Jul 20, 1969">
+      <h3>Apollo 11 Moon Landing</h3>
+      <p>Neil Armstrong and Buzz Aldrin became the first humans to walk on the Moon, a milestone in human space exploration.</p>
+    </div>
+    <div class="event right" data-date="Jul 18, 1980">
+      <h3>First Indigenous Satellite Launch Vehicle</h3>
+      <p>India’s SLV-3 successfully launched the Rohini satellite, showcasing the country’s self-reliance in space launch technologies.</p>
+    </div>
+    <div class="event left" data-date="Nov 3, 1957">
+      <h3>Sputnik 2 Launch</h3>
+      <p>The Soviet spacecraft carried Laika, the first living creature to orbit Earth, advancing biological space research.</p>
+    </div>
+    <div class="event right" data-date="Aug 15, 1994">
+      <h3>India’s PSLV Maiden Flight</h3>
+      <p>The Polar Satellite Launch Vehicle successfully conducted its first flight, becoming a reliable workhorse for Indian launches.</p>
+    </div>
+    <div class="event left" data-date="Apr 12, 1981">
+      <h3>First Space Shuttle Launch</h3>
+      <p>NASA launched Columbia, the first reusable manned spacecraft, revolutionizing space missions with reusable technology.</p>
+    </div>
+    <div class="event right" data-date="May 18, 2008">
+      <h3>Chandrayaan-1 Launch</h3>
+      <p>India launched its first lunar probe, initiating advanced studies of the Moon and its resources.</p>
+    </div>
+    <div class="event left" data-date="Nov 26, 1998">
+      <h3>International Space Station Begins</h3>
+      <p>The first module of the ISS was launched, creating a multinational orbital laboratory for scientific research.</p>
+    </div>
+    <div class="event right" data-date="Oct 22, 2014">
+      <h3>Mars Orbiter Mission Success</h3>
+      <p>India’s spacecraft successfully entered Mars orbit on its first attempt, an unprecedented achievement in planetary exploration.</p>
+    </div>
+    <div class="event left" data-date="Apr 24, 1990">
+      <h3>Hubble Space Telescope Launched</h3>
+      <p>NASA deployed the Hubble telescope, vastly improving our understanding of the universe through deep space imaging.</p>
+    </div>
+    <div class="event right" data-date="Feb 15, 2017">
+      <h3>ISRO Launches Record 104 Satellites</h3>
+      <p>ISRO set a world record by launching 104 satellites in a single mission, demonstrating unmatched launch capabilities.</p>
+    </div>
+    <div class="event left" data-date="Jan 28, 1986">
+      <h3>Challenger Disaster</h3>
+      <p>NASA’s Space Shuttle Challenger tragically broke apart, reminding the world of the risks in human spaceflight.</p>
+    </div>
+    <div class="event right" data-date="Sep 15, 2019">
+      <h3>Chandrayaan-2 Soft Landing Attempt</h3>
+      <p>India’s lunar lander attempted to touch down near the Moon’s south pole, advancing lunar exploration technology.</p>
+    </div>
+    <div class="event left" data-date="Jul 4, 1997">
+      <h3>Mars Pathfinder Landing</h3>
+      <p>NASA’s rover Sojourner successfully explored Mars, sending back detailed surface images and data.</p>
+    </div>
+    <div class="event right" data-date="Mar 22, 2021">
+      <h3>Mars Rover Perseverance Landing</h3>
+      <p>NASA landed Perseverance rover on Mars to search for signs of ancient life and collect rock samples.</p>
+    </div>
+    <div class="event left" data-date="Feb 7, 2019">
+      <h3>Chandrayaan-2 Launch</h3>
+      <p>India launched its second lunar mission, aiming for detailed lunar surface mapping and exploration.</p>
+    </div>
+    <div class="event right" data-date="Apr 24, 2023">
+      <h3>NASA Artemis I Launch</h3>
+      <p>NASA’s Artemis I mission launched, paving the way for human return to the Moon and future Mars exploration.</p>
+    </div>
+    <div class="event left" data-date="Oct 4, 1957">
+      <h3>Sputnik 1 Launch</h3>
+      <p>The world’s first artificial satellite was launched by the Soviet Union, starting the space race era.</p>
+    </div>
+    <div class="event right" data-date="Jul 22, 2016">
+      <h3>ISRO Launches Astrosat</h3>
+      <p>India launched its first dedicated multi-wavelength space observatory, enhancing astrophysics research.</p>
+    </div>
+    <div class="event left" data-date="Dec 21, 1968">
+      <h3>Apollo 8 Orbits the Moon</h3>
+      <p>First crewed spacecraft to orbit the Moon, providing critical data for future lunar landings.</p>
+    </div>
+    <div class="event right" data-date="Jun 18, 2017">
+      <h3>Record Launch: PSLV-C38</h3>
+      <p>ISRO launched 31 satellites in one mission, showcasing its growing capabilities in satellite deployment.</p>
+    </div>
+    <div class="event left" data-date="May 25, 1961">
+      <h3>President Kennedy’s Moon Goal</h3>
+      <p>The U.S. President declared the goal to land a man on the Moon within the decade, energizing NASA's mission.</p>
+    </div>
+    <div class="event right" data-date="Jan 10, 2018">
+      <h3>Launch of GSAT-6A</h3>
+      <p>ISRO launched an advanced communication satellite enhancing secure mobile satellite services for India.</p>
+    </div>
+    <div class="event left" data-date="Dec 7, 1972">
+      <h3>Last Apollo Moon Mission</h3>
+      <p>Apollo 17 marked the final manned lunar landing, expanding scientific knowledge of the Moon’s geology.</p>
+    </div>
+    <div class="event right" data-date="Feb 28, 2019">
+      <h3>RISAT-2B Satellite Launch</h3>
+      <p>India launched an advanced radar imaging satellite enhancing all-weather surveillance capabilities.</p>
+    </div>
+    <div class="event left" data-date="Jun 5, 1961">
+      <h3>First American in Space</h3>
+      <p>Alan Shepard became the first American astronaut, achieving a suborbital flight and boosting NASA's morale.</p>
+    </div>
+    <div class="event right" data-date="Oct 5, 2018">
+      <h3>NavIC Navigation System Completed</h3>
+      <p>India’s regional satellite navigation system became operational, providing accurate positioning services.</p>
+    </div>
+    <div class="event left" data-date="Jan 31, 1958">
+      <h3>Explorer 1 Launch</h3>
+      <p>The U.S. launched its first satellite, discovering the Van Allen radiation belts around Earth.</p>
+    </div>
+    <div class="event right" data-date="Jul 22, 2022">
+      <h3>Launch of Aditya-L1</h3>
+      <p>India’s first solar mission launched to study the Sun’s corona and its effects on space weather.</p>
+    </div>
+    <div class="event left" data-date="Apr 12, 1961">
+      <h3>First Human in Space</h3>
+      <p>Yuri Gagarin orbited Earth, becoming the first person to travel into space and inspiring global space efforts.</p>
+    </div>
+    <div class="event right" data-date="Sep 26, 2020">
+      <h3>Cartosat-3 Satellite Launch</h3>
+      <p>ISRO launched an advanced earth observation satellite with high-resolution imaging capabilities.</p>
+    </div>
+    <div class="event left" data-date="Nov 20, 1969">
+      <h3>Apollo 12 Moon Landing</h3>
+      <p>The second crewed mission to the Moon successfully landed, conducting extensive scientific experiments.</p>
+    </div>
+    <div class="event right" data-date="Feb 15, 2021">
+      <h3>Launch of EOS-01</h3>
+      <p>India launched an advanced earth observation satellite for agriculture, forestry, and disaster management.</p>
+    </div>
+    <div class="event left" data-date="Jan 27, 1967">
+      <h3>Apollo 1 Tragedy</h3>
+      <p>A cabin fire during a launch rehearsal claimed three astronauts’ lives, reshaping NASA safety protocols.</p>
+    </div>
+    <div class="event right" data-date="May 22, 2019">
+      <h3>RISAT-2BR1 Satellite Launch</h3>
+      <p>ISRO launched a radar imaging satellite enhancing agricultural and forestry monitoring capabilities.</p>
+    </div>
+    <div class="event left" data-date="Jul 16, 1969">
+      <h3>Apollo 11 Launch</h3>
+      <p>The historic mission launched the first humans toward the Moon, culminating in the first Moon landing.</p>
+    </div>
+    <div class="event right" data-date="Nov 29, 2013">
+      <h3>Mars Orbiter Mission Launch</h3>
+      <p>India launched its first interplanetary mission, becoming the first Asian nation to reach Mars orbit.</p>
+    </div>
+    <div class="event left" data-date="Feb 20, 1962">
+      <h3>John Glenn Orbits Earth</h3>
+      <p>First American to orbit the Earth, completing three orbits and advancing manned spaceflight technology.</p>
+    </div>
+    <div class="event right" data-date="Apr 3, 2018">
+      <h3>Launch of Cartosat-2 Series</h3>
+      <p>ISRO launched a high-resolution earth observation satellite for urban and rural planning.</p>
+    </div>
+    <div class="event left" data-date="Jun 21, 2001">
+      <h3>Launch of Chandra X-ray Observatory</h3>
+      <p>NASA deployed its premier X-ray telescope, revolutionizing high-energy astrophysics studies.</p>
+    </div>
+    <div class="event right" data-date="Mar 27, 2023">
+      <h3>Launch of EOS-03 Satellite</h3>
+      <p>India launched an earth observation satellite focused on weather forecasting and disaster management.</p>
+    </div>
+  </div>
+
+</body>
+</html>

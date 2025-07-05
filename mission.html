@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Missions</title>
+    <style>
+        /* Black & White Dark Theme */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px;
+            background: #111;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 15px;
+            background: #222;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .container {
+            margin: 30px auto;
+            width: 90%;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .card {
+            width: 140px;
+            height: 130px;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 15px;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .card:hover {
+            background: #333;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+        }
+
+       .modal-content {
+            background: #222;
+            color: white;
+            margin:0% auto;
+            padding:30px;
+            width: 45%;
+			border-radius: 2px;
+            text-align: left;
+			box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        .modal-content img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .close:hover {
+            color: red;
+        }
+
+        .info-section {
+            margin-top: 50px;
+            padding: 20px;
+            background: #111;
+            text-align: left;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+		.info-section img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        
+        footer {
+            padding: 20px;
+            background: #222;
+            margin-top: 30px;
+        }
+		h1 a {
+		text-decoration:none;
+		color:inherit;
+		}
+		 
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><a href="home ham2.html">VoidSeek</a></h1>
+        <p>Exploring the Space Missions</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#darkmatter">Historical Missions</a></li>
+            <li><a href="#aliens">NASA Missions</a></li>
+            <li><a href="#exploration">ISRO Missions</a></li>
+			<li><a href="#exploration">Rocket Launches</a></li>
+        </ul>
+    </nav>
+     <section class="container">
+        <h2>Advanced Astronomical Concepts</h2>
+        <div class="cards">
+            <div class="card" onclick="openModal('Historical Missions')">Historical Missions</div>
+            <div class="card" onclick="openModal('NASA Missions')">NASA Missions</div>
+            <div class="card" onclick="openModal('ISRO Missions')">ISRO Missions</div>
+			<div class="card" onclick="openModal('Rocket Launches')">Rocket Launches</div>
+			
+        </div>
+    </section>
+    
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Astronomy Image">
+            <h3 id="modal-title"></h3>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <section class="info-section">
+        <h2>Space Missions</h2>
+        
+        <h3>Historical Missions</h3>
+        <p>Historical space missions have played a crucial role in advancing our understanding of the universe and pushing the boundaries of human exploration. One of the earliest and most iconic missions was NASA’s Apollo 11 in 1969, which successfully landed the first humans on the Moon. Earlier, in 1957, the Soviet Union launched Sputnik 1, the world’s first artificial satellite, marking the beginning of the space age. Later missions like Voyager 1 and 2, launched in 1977, provided humanity’s first close-up views of the outer planets and continue to send data from interstellar space. The Hubble Space Telescope, launched in 1990, revolutionized astronomy by capturing deep-space images with unprecedented clarity. These and many other missions laid the foundation for today’s advanced space exploration, including Mars rovers, space telescopes, and planned crewed missions to Mars and beyond.</p>
+
+        <h3>Nasa Missions</h3>
+        <p>NASA missions have been at the forefront of space exploration, scientific discovery, and technological innovation for decades. From the historic Apollo missions that first landed humans on the Moon to the Space Shuttle program that enabled routine travel to low Earth orbit, NASA has continually pushed the boundaries of what is possible. Robotic missions like the Mars rovers—Spirit, Opportunity, Curiosity, and Perseverance—have explored the Martian surface, searching for signs of past life and paving the way for future human missions. NASA's Voyager spacecraft have traveled beyond the solar system, sending back invaluable data about distant planets and interstellar space. More recently, the James Webb Space Telescope, launched in 2021, has begun capturing the most detailed images of the early universe ever seen. These missions reflect NASA’s ongoing commitment to exploring space, understanding our place in the cosmos, and inspiring generations to come.</p>
+		
+		<h3>ISRO Missions</h3>
+        <p>SRO (Indian Space Research Organisation) has achieved remarkable milestones through its space missions, showcasing India's growing capabilities in space exploration and technology. Starting with the launch of Aryabhata, India’s first satellite in 1975, ISRO has made significant progress over the decades. Its Chandrayaan-1 mission in 2008 discovered water on the Moon, while the Mars Orbiter Mission (Mangalyaan) in 2013 made India the first Asian nation to reach Mars orbit and the first in the world to do so in its maiden attempt. More recently, the Chandrayaan-3 mission successfully landed near the Moon’s south pole in 2023, marking a historic achievement. ISRO has also launched numerous Earth observation and communication satellites, and its PSLV and GSLV rockets have become known for their reliability and cost-effectiveness. These missions highlight ISRO’s commitment to scientific advancement, national development, and global space collaboration.</p>
+		
+		<h3>Rocket Launches</h3>
+        <p>Rocket launches are powerful and complex events that mark the beginning of a spacecraft’s journey into space. They involve the ignition of rocket engines that burn fuel to generate the immense thrust needed to overcome Earth’s gravity. Launches are typically conducted from spaceports or launchpads, with precise timing and coordination to ensure the spacecraft reaches its intended orbit. Rockets are often multi-staged, meaning used-up sections are jettisoned to lighten the load and allow the remaining stages to continue the ascent. These launches are used for various missions, including deploying satellites, sending probes to other planets, and transporting astronauts and cargo to space stations. Each rocket launch represents a significant achievement in engineering and a step forward in humanity’s exploration of the universe.</p>
+    </section>
+        
+    
+
+		   
+
+    <footer>
+        <p>© 2025 VoidSeek | Space Missions</p>
+    </footer>
+    <script>
+        const data = {
+            "Historical Missions": {
+                title: "Historical Missions",
+                text: "Historical missions are significant space explorations or launches that marked major milestones in the advancement of space science and technology.",
+                image: "https://idsb.tmgrup.com.tr/ly/uploads/images/2021/04/07/105938.jpg"
+				},
+            "NASA Missions": {
+                title: "NASA Missions",
+                text: "NASA Missions are space exploration projects conducted by the United States' National Aeronautics and Space Administration to advance scientific knowledge, technology, and space travel.",
+                image: "https://www.slashgear.com/img/gallery/the-15-most-groundbreaking-nasa-missions/intro-import.jpg"
+				},
+            "ISRO Missions": {
+                title: "ISRO Missions",
+                text: "ISRO missions are space exploration and satellite launch projects carried out by the Indian Space Research Organisation to support scientific research, national development, and international cooperation in space.",
+                image: "https://www.financialexpress.com/wp-content/uploads/2021/02/ISRO-Gaganyaan-Misson.jpg"
+			},
+            "Rocket Launches": {
+                title: "Rocket Launches",
+                text: "Rocket launches are the liftoffs of rockets from Earth or other surfaces to transport spacecraft, satellites, or payloads into space.",
+				image: "https://eskipaper.com/images/space-rockets-4.jpg"
+            }
+        };
+
+        function openModal(topic) {
+            document.getElementById("modal-title").innerText = data[topic].title;
+            document.getElementById("modal-text").innerText = data[topic].text;
+            document.getElementById("modal-image").src = data[topic].image;
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+
+    
+
+</body>
+</html>

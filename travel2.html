@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Space Travel & Famous Astronauts</title>
+  <style>
+    /* Reset some basic elements */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0b0c1a 0%, #1a2238 80%); 
+      background-image:url('ss.jpg');
+      color: #e0e0e0;
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease;
+    }
+
+    .overlay {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: rgba(10, 12, 27, 0.85);
+      padding: 50px 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 40px rgba(255, 204, 0, 0.3);
+    }
+
+    h1, h2 {
+      font-family: 'Orbitron', 'Segoe UI', sans-serif;
+      color: yellow;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 12px #ffd700;
+      letter-spacing: 1.5px;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      text-align: center;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    h2 {
+      font-size: 2rem;
+      border-bottom: 2px solid yellow;
+      padding-bottom: 8px;
+      margin-top: 2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #ccc;
+      max-width: 900px;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .astronauts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #1a2138, #101726);
+      border-radius: 15px;
+      padding: 25px 20px;
+      box-shadow:
+        4px 4px 10px rgba(0, 0, 0, 0.7),
+        -4px -4px 15px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow:
+        8px 8px 20px rgba(255, 221, 85, 0.4),
+        -8px -8px 20px rgba(255, 255, 255, 0.1);
+      background: linear-gradient(145deg, #2d2f56, #1f213d);
+    }
+
+    .card h3 {
+      color: #40e0d0;
+      font-family: 'Segoe UI Semibold', 'Segoe UI', sans-serif;
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+      text-shadow: 0 0 8px #40e0d0;
+    }
+
+    .card p {
+      color: #d0d8e0;
+      font-size: 1rem;
+      line-height: 1.5;
+      text-shadow: 0 0 3px rgba(0,0,0,0.7);
+    }
+
+    /* Responsive text sizes */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 1.7rem;
+      }
+
+      .card h3 {
+        font-size: 1.3rem;
+      }
+    }
+
+    /* Add subtle floating stars in background using before pseudo-element */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(2px 2px at 20% 15%, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 50% 40%, #fff, transparent),
+        radial-gradient(2.5px 2.5px at 70% 60%, #fff, transparent),
+        radial-gradient(1.2px 1.2px at 85% 80%, #fff, transparent),
+        radial-gradient(1.8px 1.8px at 10% 70%, #fff, transparent);
+      background-repeat: repeat;
+      background-size: 100% 100%;
+      animation: twinkle 6s infinite alternate;
+      z-index: 0;
+      opacity: 0.8;
+    }
+
+    @keyframes twinkle {
+      0% {opacity: 0.7;}
+      100% {opacity: 1;}
+    }
+	 .redirect-button {
+      background-color: #cf8c11; /* Green */
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      text-align: center;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .redirect-button:hover {
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>PIONEERS BEYOND EARTH</h1>
+
+  
+
+    <div class="section">
+      <h2>ASTRONAUTS</h2>
+      <div class="astronauts">
+
+        <!-- Indian Astronauts -->
+        <div class="card">
+          <h3>Rakesh Sharma (India)</h3>
+          <p>First Indian in space (1984) aboard Soviet Soyuz T-11. Famous for saying "Saare Jahan Se Achha" from space.</p>
+        </div>
+        <div class="card">
+          <h3>Kalpana Chawla (India)</h3>
+          <p>First Indian-born woman in space. Flew on Columbia shuttle; tragically died in 2003 during re-entry.</p>
+        </div>
+        <div class="card">
+          <h3>Sunita Williams (India/USA)</h3>
+          <p>American astronaut of Indian origin. Spent 321 days in space. Known for spacewalks and ISS missions.</p>
+        </div>
+        <div class="card">
+          <h3>Raja Chari (India/USA)</h3>
+          <p>NASA astronaut of Indian origin. Pilot and commander in NASA’s Artemis and SpaceX Crew missions.</p>
+        </div>
+        <div class="card">
+          <h3>Gaganyaan Astronauts (India)</h3>
+          <p>Four IAF pilots selected for ISRO’s upcoming Gaganyaan mission — India’s first human spaceflight project.</p>
+        </div>
+
+        <!-- Global Astronauts -->
+        <div class="card">
+          <h3>Yuri Gagarin (Russia)</h3>
+          <p>First human in space, 1961. Orbited Earth on Vostok 1, marking the beginning of human space exploration.</p>
+        </div>
+        <div class="card">
+          <h3>Neil Armstrong (USA)</h3>
+          <p>First person to walk on the Moon (1969) during Apollo 11 mission. Famous for "one small step" quote.</p>
+        </div>
+        <div class="card">
+          <h3>Buzz Aldrin (USA)</h3>
+          <p>Second person to walk on the Moon. Lunar Module pilot for Apollo 11, known for his contributions to lunar science.</p>
+        </div>
+        <div class="card">
+          <h3>Valentina Tereshkova (Russia)</h3>
+          <p>First woman in space (1963). Flew solo in Vostok 6. Remains the only woman to fly solo in space.</p>
+        </div>
+        <div class="card">
+          <h3>Chris Hadfield (Canada)</h3>
+          <p>Famous Canadian astronaut. Commander of ISS, known for his space guitar performance and outreach.</p>
+        </div>
+        <div class="card">
+          <h3>Peggy Whitson (USA)</h3>
+          <p>Holds record for most time spent in space by an American astronaut (665 days). ISS commander multiple times.</p>
+        </div>
+        <div class="card">
+          <h3>Mae Jemison (USA)</h3>
+          <p>First African-American woman in space (1992). Mission specialist on STS-47 Endeavour.</p>
+        </div>
+        <div class="card">
+          <h3>John Glenn (USA)</h3>
+          <p>First American to orbit Earth (1962). Returned to space at age 77 on Shuttle Discovery in 1998.</p>
+        </div>
+        <div class="card">
+          <h3>Sally Ride (USA)</h3>
+          <p>First American woman in space (1983). A physicist and mission specialist aboard Challenger STS-7.</p>
+        </div>
+        <div class="card">
+          <h3>Alan Shepard (USA)</h3>
+          <p>First American in space (1961) and fifth person to walk on the Moon during Apollo 14 mission.</p>
+        </div>
+				 <button class="redirect-button" onclick="window.location.href='model.html'">
+    3D Model of an Astronaut
+  </button>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

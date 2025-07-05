@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Astronomy Quiz</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: black;
+    color: #e0e0e0;
+    min-height: 100vh;
+    overflow-y: auto;
+    position: relative;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    background-repeat: repeat;
+    animation: moveStars 60s linear infinite;
+    filter: drop-shadow(0 0 6px #00f0ff);
+  }
+  @keyframes moveStars {
+    from { background-position: 0 0; }
+    to { background-position: -300px -300px; }
+  }
+  .container {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 2.5rem 2rem;
+    max-width: 720px;
+    margin: 3rem auto 4rem auto;
+    border-radius: 12px;
+    box-shadow: 0 0 25px #00bfffaa;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2.75rem;
+    background: linear-gradient(90deg, #00bfff, #6a5acd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    margin-bottom: 1.5rem;
+  }
+  .question {
+    margin-bottom: 1.4rem;
+  }
+  .question label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.15rem;
+    font-family: 'Georgia', serif;
+    color: #d0d8ff;
+  }
+  .options label {
+    display: block;
+    margin: 0.25rem 0 0.8rem 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    font-style: italic;
+    font-size: 1.05rem;
+    font-family: 'Georgia', serif;
+    color: #c0c8e8;
+    transition: color 0.3s ease;
+    border-radius: 5px;
+    padding: 2px 8px;
+  }
+  .options label:hover {
+    color: #00bfff;
+  }
+  input[type="radio"] {
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+  button {
+    display: block;
+    margin: 2.5rem auto 0 auto;
+    padding: 0.8rem 2.5rem;
+    font-size: 1.25rem;
+    background: #111;
+    color: #00bfff;
+    border: 2px solid #00bfff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    box-shadow: 0 0 15px #00bfff88;
+    animation: pulse 2.5s infinite;
+    user-select: none;
+  }
+  button:hover {
+    background: #00bfff;
+    color: #111;
+    transform: scale(1.08);
+    box-shadow: 0 0 35px #00bfffcc;
+  }
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 0 15px #00bfff88;
+    }
+    50% {
+      box-shadow: 0 0 35px #00bfffcc;
+    }
+  }
+  #result {
+    margin-top: 2rem;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    color: #00bfff;
+    text-shadow: 0 0 10px #00bfffcc;
+    white-space: pre-wrap;
+    font-size: 1.1rem;
+  }
+  .correct {
+    color: #0f0;
+  }
+  .wrong {
+    color: #f44;
+  }
+  .correct-answer {
+    background-color: black;
+    color: #00bfff !important;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 2px 6px;
+  }
+  .selected-answer {
+    background-color: black !important;
+    color: white !important;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 2px 6px;
+  }
+  @media (max-width: 600px) {
+    .container {
+      margin: 2rem 1rem 3rem 1rem;
+      padding: 2rem 1rem;
+    }
+    h1 {
+      font-size: 2.2rem;
+    }
+    button {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+  
+  <div class="container">
+    <h1>Astronomy Quiz</h1>
+    <form id="quizForm">
+      <div class="question">
+        <label>1. What planet do we live on?</label>
+        <div class="options">
+          <label><input type="radio" name="q1" value="Earth" /> Earth</label>
+          <label><input type="radio" name="q1" value="Mars" /> Mars</label>
+          <label><input type="radio" name="q1" value="Venus" /> Venus</label>
+        </div>
+      </div>
+      <div class="question">
+        <label>2. What is the name of our star?</label>
+        <div class="options">
+          <label><input type="radio" name="q2" value="Sun" /> Sun</label>
+          <label><input type="radio" name="q2" value="Moon" /> Moon</label>
+          <label><input type="radio" name="q2" value="Earth" /> Earth</label>
+        </div>
+      </div>
+      <div class="question">
+        <label>3. What planet is known as the Red Planet?</label>
+        <div class="options">
+          <label><input type="radio" name="q3" value="Mars" /> Mars</label>
+          <label><input type="radio" name="q3" value="Jupiter" /> Jupiter</label>
+          <label><input type="radio" name="q3" value="Saturn" /> Saturn</label>
+        </div>
+      </div>
+      <div class="question">
+        <label>4. What galaxy is Earth located in?</label>
+        <div class="options">
+          <label><input type="radio" name="q4" value="Milky Way" /> Milky Way</label>
+          <label><input type="radio" name="q4" value="Andromeda" /> Andromeda</label>
+          <label><input type="radio" name="q4" value="Whirlpool" /> Whirlpool</label>
+        </div>
+      </div>
+      <div class="question">
+        <label>5. What is the largest planet in our solar system?</label>
+        <div class="options">
+          <label><input type="radio" name="q5" value="Jupiter" /> Jupiter</label>
+          <label><input type="radio" name="q5" value="Saturn" /> Saturn</label>
+          <label><input type="radio" name="q5" value="Neptune" /> Neptune</label>
+        </div>
+      </div>
+      <div class="question">
+        <label>6. Which planet has rings around it?</label>
+        <div class="options">
+          <label><input type="radio" name="q6" value="Saturn" /> Saturn</label>
+          <label><input type="radio" name="q6" value="Mars" /> Mars</label>
+          <label><input type="radio" name="q6" value="Venus" /> Venus</label>
+        </div>
+      </div>
+      <div class="question">
+        <label>7. What is a comet mostly made of?</label>
+        <div class="options">
+          <label><input type="radio" name="q7" value="Ice and dust" /> Ice and dust</label>
+          <label><input type="radio" name="q7" value="Rock" /> Rock</label>
+          <label><input type="radio" name="q7" value="Gas" /> Gas</label>
+        </div>
+      </div>
+      <div class="question">
+        <label>8. How long does it take Earth to orbit the Sun?</label>
+        <div class="options">
+          <label><input type="radio" name="q8" value="1 year" /> 1 year</label>
+          <label><input type="radio" name="q8" value="1 month" /> 1 month</label>
+          <label><input type="radio" name="q8" value="1 day" /> 1 day</label>
+        </div>
+      </div>
+      <div class="question">
+        <label>9. Which planet is closest to the Sun?</label>
+        <div class="options">
+          <label><input type="radio" name="q9" value="Mercury" /> Mercury</label>
+          <label><input type="radio" name="q9" value="Venus" /> Venus</label>
+          <label><input type="radio" name="q9" value="Earth" /> Earth</label>
+        </div>
+      </div>
+      <div class="question">
+        <label>10. What is the name of Earth's natural satellite?</label>
+        <div class="options">
+          <label><input type="radio" name="q10" value="Moon" /> Moon</label>
+          <label><input type="radio" name="q10" value="Sun" /> Sun</label>
+          <label><input type="radio" name="q10" value="Mars" /> Mars</label>
+        </div>
+      </div>
+      <div class="question">
+        <label>11. What force keeps planets in orbit around the Sun?</label>
+        <div class="options">
+          <label><input type="radio" name="q11" value="Gravity" /> Gravity</label>
+          <label><input type="radio" name="q11" value="Magnetism" /> Magnetism</label>
+          <label><input type="radio" name="q11" value="Friction" /> Friction</label>
+        </div>
+      </div>
+      <div class="question">
+        <label>12. What planet is known for its large red spot?</label>
+        <div class="options">
+          <label><input type="radio" name="q12" value="Jupiter" /> Jupiter</label>
+          <label><input type="radio" name="q12" value="Mars" /> Mars</label>
+          <label><input type="radio" name="q12" value="Venus" /> Venus</label>
+        </div>
+      </div>
+      <div class="question">
+        <label>13. What is the closest star to Earth besides the Sun?</label>
+        <div class="options">
+          <label><input type="radio" name="q13" value="Proxima Centauri" /> Proxima Centauri</label>
+          <label><input type="radio" name="q13" value="Alpha Centauri" /> Alpha Centauri</label>
+          <label><input type="radio" name="q13" value="Sirius" /> Sirius</label>
+        </div>
+      </div>
+      <div class="question">
+        <label>14. What is a nebula?</label>
+        <div class="options">
+          <label><input type="radio" name="q14" value="A cloud of gas and dust" /> A cloud of gas and dust</label>
+          <label><input type="radio" name="q14" value="A type of star" /> A type of star</label>
+          <label><input type="radio" name="q14" value="A planet" /> A planet</label>
+        </div>
+      </div>
+      <div class="question">
+        <label>15. What do we call a system of millions or billions of stars?</label>
+        <div class="options">
+          <label><input type="radio" name="q15" value="Galaxy" /> Galaxy</label>
+          <label><input type="radio" name="q15" value="Solar system" /> Solar system</label>
+          <label><input type="radio" name="q15" value="Constellation" /> Constellation</label>
+        </div>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+  </div>
+<script>
+  const answers = {
+    q1: "Earth",
+    q2: "Sun",
+    q3: "Mars",
+    q4: "Milky Way",
+    q5: "Jupiter",
+    q6: "Saturn",
+    q7: "Ice and dust",
+    q8: "1 year",
+    q9: "Mercury",
+    q10: "Moon",
+    q11: "Gravity",
+    q12: "Jupiter",
+    q13: "Proxima Centauri",
+    q14: "A cloud of gas and dust",
+    q15: "Galaxy"
+  };
+
+  document.getElementById('quizForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    let score = 0;
+    let feedback = "";
+    let unanswered = 0;
+
+    // Clear previous highlights
+    const allLabels = this.querySelectorAll('.options label');
+    allLabels.forEach(label => {
+      label.classList.remove('correct-answer', 'selected-answer');
+    });
+
+    for (let i = 1; i <= 15; i++) {
+      const questionName = `q${i}`;
+      const selectedOption = this.querySelector(`input[name="${questionName}"]:checked`);
+      const userAnswer = selectedOption ? selectedOption.value : null;
+
+      if (!userAnswer) {
+        unanswered++;
+        feedback += `Question ${i}: <span class="wrong">No answer selected.</span>\n`;
+        continue;
+      }
+
+      // Mark user's selected option
+      selectedOption.parentElement.classList.add('selected-answer');
+
+      if (userAnswer === answers[questionName]) {
+        score++;
+        feedback += `Question ${i}: <span class="correct">Correct!</span>\n`;
+        selectedOption.parentElement.classList.add('correct-answer');
+      } else {
+        feedback += `Question ${i}: <span class="wrong">Wrong.</span> Correct answer: <strong>${answers[questionName]}</strong>\n`;
+        const correctOption = this.querySelector(`input[name="${questionName}"][value="${answers[questionName]}"]`);
+        if (correctOption) {
+          correctOption.parentElement.classList.add('correct-answer');
+        }
+      }
+    }
+
+    let scoreText = `Your score: ${score} / 15\n`;
+    if (unanswered > 0) {
+      scoreText += `You left ${unanswered} question(s) unanswered.\n`;
+    }
+    document.getElementById('result').innerHTML = scoreText + feedback;
+  });
+</script>
+
+</body>
+</html>

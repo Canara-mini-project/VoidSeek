@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Phenomena</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0b0c10;
+            color: #c5c6c7;
+            text-align: center;
+        }
+        header {
+            background-color: #1f2833;
+            padding: 20px;
+            font-size: 24px;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #45a29e;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        section:hover {
+            transform: scale(1.05);
+        }
+        h2 {
+            color: #66fcf1;
+        }
+        .hidden {
+            display: none;
+        }
+        .info-card {
+            margin-top: 10px;
+            padding: 15px;
+            background-color: #1f2833;
+            color: #c5c6c7;
+            border-radius: 8px;
+            display: none;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .gallery img {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.2);
+            box-shadow: 0px 0px 10px #66fcf1;
+        }
+    </style>
+    <script>
+        function toggleInfo(id) {
+            var element = document.getElementById(id);
+            if (element.classList.contains("hidden")) {
+                element.classList.remove("hidden");
+            } else {
+                element.classList.add("hidden");
+            }
+        }
+        function toggleCard(id) {
+            var card = document.getElementById(id);
+            card.style.display = card.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Space Phenomena</h1>
+    </header>
+    <section onclick="toggleInfo('eclipse-info'); toggleCard('eclipse-card');">
+        <h2>Eclipses</h2>
+        <p id="eclipse-info" class="hidden">Solar eclipses occur when the Moon passes between the Earth and the Sun, casting a shadow on Earth. Lunar eclipses happen when the Earth is between the Sun and the Moon, causing the Moon to appear red.</p>
+        <div id="eclipse-card" class="info-card">
+            Fun Fact: A total solar eclipse can last up to 7.5 minutes!
+            <div class="gallery">
+                <img src="eclipse1.jpg" alt="Solar Eclipse">
+                <img src="eclipse2.jpg" alt="Lunar Eclipse">
+            </div>
+        </div>
+    </section>
+    <section onclick="toggleInfo('moon-phases-info'); toggleCard('moon-phases-card');">
+        <h2>Phases of the Moon</h2>
+        <p id="moon-phases-info" class="hidden">The Moon has eight phases: New Moon, Waxing Crescent, First Quarter, Waxing Gibbous, Full Moon, Waning Gibbous, Last Quarter, and Waning Crescent.</p>
+        <div id="moon-phases-card" class="info-card">
+            Fun Fact: It takes the Moon about 29.5 days to complete its cycle of phases.
+            <div class="gallery">
+                <img src="phase.png" alt="Moon Phases">
+                <img src="moon2.jpg" alt="Full Moon">
+            </div>
+        </div>
+    </section>
+    <section onclick="toggleInfo('supermoon-info'); toggleCard('supermoon-card');">
+        <h2>Supermoon</h2>
+        <p id="supermoon-info" class="hidden">A supermoon occurs when the Moon is at its closest point to Earth in its orbit, making it appear larger and brighter than usual.</p>
+        <div id="supermoon-card" class="info-card">
+            Fun Fact: A supermoon can appear up to 14% larger and 30% brighter than a regular full moon.
+            <div class="gallery">
+                <img src="super.jpg" alt="Supermoon">
+                <img src="super2.jpg" alt="Large Supermoon">
+            </div>
+        </div>
+    </section>
+    <section onclick="toggleInfo('auroras-info'); toggleCard('auroras-card');">
+        <h2>Auroras</h2>
+        <p id="auroras-info" class="hidden">Auroras, or Northern and Southern Lights, are natural light displays caused by charged particles from the Sun interacting with Earth’s atmosphere.</p>
+        <div id="auroras-card" class="info-card">
+            Fun Fact: The colors of auroras depend on the type of gas in the atmosphere—oxygen produces green and red, while nitrogen creates blue and purple hues.
+            <div class="gallery">
+                <img src="aurora1.jpg" alt="Northern Lights">
+                <img src="aurora2.jpg" alt="Southern Lights">
+            </div>
+        </div>
+    </section>
+</body>
+</html>

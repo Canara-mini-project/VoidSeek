@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%), url('login bg.jpg');
+      background-position: center;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 10px;
+      width: 350px;
+      color: #fff;
+    }
+
+    .container h1 {
+      text-align: center;
+      color: #ff7200;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .form-group i {
+      position: absolute;
+      top: 12px;
+      left: 10px;
+      color: #fff;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px 10px 10px 35px;
+      border: none;
+      border-bottom: 1px solid #ff7200;
+      background: transparent;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .form-group input::placeholder {
+      color: #ccc;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #fff;
+    }
+
+    .register-button {
+      width: 100%;
+      background-color: #ff7200;
+      border: none;
+      padding: 12px;
+      font-size: 18px;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .register-button:hover {
+      background-color: #fff;
+      color: #ff7200;
+    }
+
+    .link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .link a {
+      color: #ff7200;
+      text-decoration: none;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <form class="container">
+    <h1>Register</h1>
+
+    <div class="form-group">
+      <i class="ri-user-3-line"></i>
+      <input type="text" placeholder="Full Name" required>
+    </div>
+
+    <div class="form-group">
+      <i class="ri-mail-line"></i>
+      <input type="email" placeholder="Email" required>
+    </div>
+
+    <div class="form-group">
+      <i class="ri-lock-line"></i>
+      <input type="password" placeholder="Password" required>
+    </div>
+
+    <div class="form-group">
+      <i class="ri-lock-password-line"></i>
+      <input type="password" placeholder="Confirm Password" required>
+    </div>
+
+    <button type="submit" class="register-button">Register</button>
+
+    <p class="link">Already have an account? <a href="login3.html">Login here</a></p>
+  </form>
+
+</body>
+</html>
